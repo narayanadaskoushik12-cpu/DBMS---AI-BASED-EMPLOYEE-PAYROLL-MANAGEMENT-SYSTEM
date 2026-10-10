@@ -1,0 +1,11 @@
+# Ignored files for Verdant Payroll OS
+node_modules/
+.vite/
+dist/
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.log
+.DS_Store
+Thumbs.db
