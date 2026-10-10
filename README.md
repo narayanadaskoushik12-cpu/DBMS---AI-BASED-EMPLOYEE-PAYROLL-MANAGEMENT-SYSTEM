@@ -97,7 +97,7 @@ Rather than cluttering users with 45 disjointed cards, the application unifies a
 ### Prerequisites
 - **Python 3.12+**
 - **Node.js 20+** and npm
-- **PostgreSQL 18** (Active on port `5432` with password `615461`)
+- **PostgreSQL 18** (Active on port `5432` )
 - **MongoDB** (Active on port `27017`)
 
 ---
