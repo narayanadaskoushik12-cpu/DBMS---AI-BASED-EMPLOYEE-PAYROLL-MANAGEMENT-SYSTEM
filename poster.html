@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdant Payroll OS - Project Presentation Poster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: #020906;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      color: #e6f7ef;
+    }
+
+    .poster-container {
+      width: 1000px;
+      min-height: 1500px;
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Brand Header */
+    .top-header {
+      padding: 24px 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 24px;
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.25);
+    }
+
+    .brand-name {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .brand-tagline-script {
+      font-family: 'Brush Script MT', cursive, sans-serif;
+      font-size: 28px;
+      color: #059669;
+      transform: rotate(-2deg);
+    }
+
+    .brand-pillars {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: #475569;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .brand-badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #ecfdf5;
+      color: #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #022013 0%, #064e3b 50%, #021a10 100%);
+      color: #ffffff;
+      padding: 44px 44px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      border-radius: 50px;
+      color: #a7f3d0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero-title span {
+      color: #34d399;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #d1fae5;
+      margin-bottom: 24px;
+    }
+
+    .hero-chips {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .hero-chip-item {
+      text-align: center;
+      padding: 10px 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+    }
+
+    .hero-chip-icon {
+      font-size: 18px;
+      margin-bottom: 4px;
+      color: #34d399;
+    }
+
+    .hero-chip-text {
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #10b981;
+      color: #022c22;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 12px 26px;
+      border-radius: 50px;
+      box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Device Mockup in Hero */
+    .device-mockup {
+      background: #020906;
+      border: 3px solid #1e3a2b;
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .mockup-inner {
+      background: #041a10;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid #10b981;
+    }
+
+    .mockup-screen-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #34d399;
+    }
+
+    .mockup-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .mockup-stat-card {
+      background: #02120a;
+      border: 1px solid #065f46;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .mockup-stat-val {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .mockup-stat-lbl {
+      font-size: 9px;
+      color: #6ee7b7;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .mockup-flora-vis {
+      height: 90px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+      border: 1px dashed #10b981;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #a7f3d0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Section Styling */
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 18px;
+      background: #10b981;
+      border-radius: 4px;
+    }
+
+    /* 6 Key Features Grid */
+    .features-wrap {
+      padding: 34px 44px 20px 44px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .feature-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .feature-icon-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      margin: 0 auto 10px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .f-icon-1 { background: #ecfdf5; color: #10b981; }
+    .f-icon-2 { background: #f0fdf4; color: #16a34a; }
+    .f-icon-3 { background: #e0f2fe; color: #0284c7; }
+    .f-icon-4 { background: #fef3c7; color: #d97706; }
+    .f-icon-5 { background: #fae8ff; color: #a855f7; }
+    .f-icon-6 { background: #ffe4e6; color: #e11d48; }
+
+    .feature-card h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .feature-card p {
+      font-size: 10px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* Workflow Horizontal Stepper */
+    .journey-wrap {
+      padding: 10px 44px 26px 44px;
+    }
+
+    .journey-stepper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 16px 20px;
+    }
+
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .step-bubble {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #10b981;
+      color: #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .step-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .step-arrow {
+      color: #cbd5e1;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Previews & Screenshots Section */
+    .previews-wrap {
+      padding: 10px 44px 26px 44px;
+    }
+
+    .previews-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr 0.9fr;
+      gap: 16px;
+    }
+
+    .preview-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .preview-header {
+      padding: 10px 14px;
+      background: #f1f5f9;
+      font-size: 11px;
+      font-weight: 700;
+      color: #475569;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .preview-body {
+      padding: 14px;
+    }
+
+    /* Subcard styling inside preview */
+    .ui-mock-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 10px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .ui-mock-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      color: #059669;
+    }
+
+    /* Tech Stack & Tools Footer */
+    .tech-wrap {
+      padding: 10px 44px 30px 44px;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 24px;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .tech-chip {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 10px 6px;
+      text-align: center;
+    }
+
+    .tech-icon {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .tech-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .tech-role {
+      font-size: 9px;
+      color: #64748b;
+    }
+
+    /* Bottom Banner */
+    .bottom-footer {
+      margin-top: auto;
+      background: #020906;
+      color: #ffffff;
+      padding: 20px 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #064e3b;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .footer-credit {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .footer-right-badge {
+      font-family: 'Brush Script MT', cursive, sans-serif;
+      font-size: 22px;
+      color: #34d399;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="poster-container">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="brand-left">
+        <div class="brand-logo">🌿</div>
+        <div>
+          <h1 class="brand-name">VERDANT PAYROLL OS</h1>
+          <p class="brand-sub">AI-Based Employee Payroll Management System &bull; DBMS Project</p>
+        </div>
+      </div>
+      <div class="brand-tagline-script">
+        Nurture Capital, Empower Humans
+      </div>
+      <div class="brand-pillars">
+        <div>
+          <div>ACID Compliant</div>
+          <div style="color: #059669;">Polyglot Persistence</div>
+        </div>
+        <div class="brand-badge-icon">🛡️</div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div>
+        <span class="hero-badge">Next-Gen DBMS Architecture</span>
+        <h2 class="hero-title">
+          Intelligent Payroll for a <span>Smarter Workforce</span>
+        </h2>
+        <p class="hero-desc">
+          Unifies 45 employee life dimensions into 5 master domains. Powered by real-time salary streaming, semantic RAG policy search, PostgreSQL 18.4 transactions, and local MongoDB audit ledgers.
+        </p>
+
+        <div class="hero-chips">
+          <div class="hero-chip-item">
+            <div class="hero-chip-icon">🔐</div>
+            <div class="hero-chip-text">Bcrypt + JWT RBAC</div>
+          </div>
+          <div class="hero-chip-item">
+            <div class="hero-chip-icon">⚡</div>
+            <div class="hero-chip-text">Live Streaming Vault</div>
+          </div>
+          <div class="hero-chip-item">
+            <div class="hero-chip-icon">🤖</div>
+            <div class="hero-chip-text">Vector RAG Policy</div>
+          </div>
+          <div class="hero-chip-item">
+            <div class="hero-chip-icon">📡</div>
+            <div class="hero-chip-text">Kafka Event Bus</div>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <span>Explore 5 Unified Domains &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Device Mockup inside Hero -->
+      <div class="device-mockup">
+        <div class="mockup-inner">
+          <div class="mockup-screen-header">
+            <span>● VERDANT-OS 3D WORKSPACE</span>
+            <span>WS LIVE 🟢</span>
+          </div>
+
+          <div class="mockup-stat-grid">
+            <div class="mockup-stat-card">
+              <div class="mockup-stat-lbl">Streaming Today</div>
+              <div class="mockup-stat-val">₹3,412.50</div>
+            </div>
+            <div class="mockup-stat-card">
+              <div class="mockup-stat-lbl">Net Take-Home</div>
+              <div class="mockup-stat-val">₹1,42,500</div>
+            </div>
+          </div>
+
+          <div class="mockup-flora-vis">
+            [ 3D CYBER-BOTANICAL LIVING FLORA SCENE ]
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section (6 Cards) -->
+    <div class="features-wrap">
+      <h3 class="section-title">Key Core Architecture Features</h3>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-circle f-icon-1">🔑</div>
+          <h4>JWT & RBAC</h4>
+          <p>Bcrypt salted hashes & signed JWT access gating 5 distinct employee roles.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-circle f-icon-2">💵</div>
+          <h4>Real-Time Streaming</h4>
+          <p>Salary accrues per second with one-tap instant UPI wage withdrawals.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-circle f-icon-3">🔍</div>
+          <h4>Semantic RAG</h4>
+          <p>Cosine similarity vector search over labour codes and company policies.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-circle f-icon-4">📡</div>
+          <h4>Kafka Events</h4>
+          <p>Decoupled async topics delivering real-time WebSockets notifications.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-circle f-icon-5">🛡️</div>
+          <h4>Polyglot DB</h4>
+          <p>PostgreSQL 18.4 ACID core paired with MongoDB v8.3 immutable audit logs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-circle f-icon-6">🧮</div>
+          <h4>What-If Simulator</h4>
+          <p>Monte Carlo life modeling for home loans, relocations, and tax regimes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Complete Employee Lifecycle Journey -->
+    <div class="journey-wrap">
+      <h3 class="section-title">End-to-End Employee Lifecycle & Payroll Workflow</h3>
+      <div class="journey-stepper">
+        <div class="step-item">
+          <div class="step-bubble">1</div>
+          <span class="step-label">Bio-Auth</span>
+        </div>
+        <span class="step-arrow">&rarr;</span>
+        <div class="step-item">
+          <div class="step-bubble">2</div>
+          <span class="step-label">Role RBAC</span>
+        </div>
+        <span class="step-arrow">&rarr;</span>
+        <div class="step-item">
+          <div class="step-bubble">3</div>
+          <span class="step-label">PostgreSQL ACID</span>
+        </div>
+        <span class="step-arrow">&rarr;</span>
+        <div class="step-item">
+          <div class="step-bubble">4</div>
+          <span class="step-label">Gross-to-Net</span>
+        </div>
+        <span class="step-arrow">&rarr;</span>
+        <div class="step-item">
+          <div class="step-bubble">5</div>
+          <span class="step-label">Kafka Publish</span>
+        </div>
+        <span class="step-arrow">&rarr;</span>
+        <div class="step-item">
+          <div class="step-bubble">6</div>
+          <span class="step-label">Mongo Audit</span>
+        </div>
+        <span class="step-arrow">&rarr;</span>
+        <div class="step-item">
+          <div class="step-bubble">7</div>
+          <span class="step-label">SHA-256 Payslip</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Website & Database Previews -->
+    <div class="previews-wrap">
+      <h3 class="section-title">Database & System Previews</h3>
+      <div class="previews-grid">
+        <!-- PostgreSQL & Payslip Preview -->
+        <div class="preview-card">
+          <div class="preview-header">
+            <span>POSTGRESQL 18 &bull; SALARY CERTIFICATE</span>
+            <span>pgAdmin 4</span>
+          </div>
+          <div class="preview-body">
+            <div class="ui-mock-row">
+              <span>Basic Salary</span>
+              <span class="ui-mock-val">₹75,000</span>
+            </div>
+            <div class="ui-mock-row">
+              <span>House Rent Allowance (HRA)</span>
+              <span class="ui-mock-val">₹37,500</span>
+            </div>
+            <div class="ui-mock-row">
+              <span>AI Tooling Credit (Dim #41)</span>
+              <span class="ui-mock-val">+₹10,000</span>
+            </div>
+            <div class="ui-mock-row">
+              <span>Patent Royalties (Dim #43)</span>
+              <span class="ui-mock-val">+₹18,500</span>
+            </div>
+            <div class="ui-mock-row" style="background: #ecfdf5; border-color: #10b981;">
+              <strong>Net Take-Home Disbursed</strong>
+              <strong class="ui-mock-val">₹1,48,800</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- MongoDB Document Store Preview -->
+        <div class="preview-card">
+          <div class="preview-header">
+            <span>MONGODB v8.3 &bull; AUDIT LOGS</span>
+            <span>NoSQL Store</span>
+          </div>
+          <div class="preview-body">
+            <div class="ui-mock-row">
+              <span>Action: EMPLOYEE_ENROLLED</span>
+              <span class="ui-mock-val">EMP-001</span>
+            </div>
+            <div class="ui-mock-row">
+              <span>Actor: admin@synthetica.eco</span>
+              <span class="ui-mock-val">AUTH_PASS</span>
+            </div>
+            <div class="ui-mock-row">
+              <span>Collection: chat_history</span>
+              <span class="ui-mock-val">RAG_LOGGED</span>
+            </div>
+            <div class="ui-mock-row">
+              <span>Cryptographic Hash</span>
+              <span class="ui-mock-val">SHA-256</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semantic RAG & Kafka Event Preview -->
+        <div class="preview-card">
+          <div class="preview-header">
+            <span>RAG VECTOR & KAFKA BUS</span>
+            <span>AI Layer</span>
+          </div>
+          <div class="preview-body">
+            <div class="ui-mock-row">
+              <span>Maternity & Continuity</span>
+              <span class="ui-mock-val">Sim: 0.516</span>
+            </div>
+            <div class="ui-mock-row">
+              <span>Emergency Advance Policy</span>
+              <span class="ui-mock-val">Retrieved</span>
+            </div>
+            <div class="ui-mock-row">
+              <span>payroll-events Topic</span>
+              <span class="ui-mock-val">Offset: 4</span>
+            </div>
+            <div class="ui-mock-row">
+              <span>alert-events Fatigue Guard</span>
+              <span class="ui-mock-val">Optimal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technology Stack & Tools Used -->
+    <div class="tech-wrap">
+      <div>
+        <h3 class="section-title">Core Technology Stack</h3>
+        <div class="tech-grid">
+          <div class="tech-chip">
+            <div class="tech-icon">⚛️</div>
+            <div class="tech-name">React 19</div>
+            <div class="tech-role">Frontend</div>
+          </div>
+          <div class="tech-chip">
+            <div class="tech-icon">🌐</div>
+            <div class="tech-name">Three.js</div>
+            <div class="tech-role">3D Graphics</div>
+          </div>
+          <div class="tech-chip">
+            <div class="tech-icon">⚡</div>
+            <div class="tech-name">FastAPI</div>
+            <div class="tech-role">Python API</div>
+          </div>
+          <div class="tech-chip">
+            <div class="tech-icon">🐘</div>
+            <div class="tech-name">PostgreSQL</div>
+            <div class="tech-role">ACID Database</div>
+          </div>
+          <div class="tech-chip">
+            <div class="tech-icon">🍃</div>
+            <div class="tech-name">MongoDB</div>
+            <div class="tech-role">NoSQL Audit</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="section-title">Tools & Infrastructure</h3>
+        <div class="tools-grid">
+          <div class="tech-chip">
+            <div class="tech-icon">🐘</div>
+            <div class="tech-name">pgAdmin 4</div>
+            <div class="tech-role">SQL Manager</div>
+          </div>
+          <div class="tech-chip">
+            <div class="tech-icon">🍃</div>
+            <div class="tech-name">Compass</div>
+            <div class="tech-role">Mongo UI</div>
+          </div>
+          <div class="tech-chip">
+            <div class="tech-icon">🐙</div>
+            <div class="tech-name">Git & GitHub</div>
+            <div class="tech-role">Repository</div>
+          </div>
+          <div class="tech-chip">
+            <div class="tech-icon">💻</div>
+            <div class="tech-name">VS Code</div>
+            <div class="tech-role">Environment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <footer class="bottom-footer">
+      <div class="footer-left">
+        <span>🌿 VERDANT PAYROLL OS</span>
+        <span style="color: #34d399;">&bull;</span>
+        <span class="footer-credit">Built with Passion &bull; Powered by AI & Polyglot Databases</span>
+      </div>
+      <div class="footer-right-badge">
+        Next-Gen Enterprise Human Capital
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
